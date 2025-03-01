@@ -33,8 +33,14 @@ wss.on("connection", (ws) => {
   }
 });
 
+wss.on("close", () => {
+  console.log("Server closed");
+});
+
 wss.broadcast = function broadcast(data) {
   wss.clients.forEach((client) => {
     client.send(data);
   });
 };
+
+/* DB */

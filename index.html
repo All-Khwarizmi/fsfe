@@ -12,8 +12,8 @@
 
   <script>
     let ws;
-    const protocol = location.protocol === "https:" ? "wss:" : "ws:";
-    const wsUrl = `${protocol}//${location.host}`;
+    const protocol = location.protocol === "https:" ? "wss" : "ws";
+    const wsUrl = `${protocol}://${location.host}`;
     ws = new WebSocket(wsUrl);
     ws.onopen = () => {
       console.log("WebSocket connection established");
